@@ -1,0 +1,577 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+      name="viewport"
+    />
+    <meta content="mobile_stack" name="shell-type" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        .pb-safe {
+          padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+        .pt-safe {
+          padding-top: env(safe-area-inset-top, 0px);
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              outline: "#7f7669",
+              primary: "#745a2c",
+              "surface-container-low": "#f7f3ef",
+              "primary-fixed-dim": "#e4c28a",
+              "surface-tint": "#745a2c",
+              "on-primary-fixed-variant": "#5a4317",
+              background: "#fdf8f5",
+              "surface-dim": "#ddd9d6",
+              "on-surface": "#1c1b1a",
+              "surface-container-lowest": "#ffffff",
+              "on-primary": "#ffffff",
+              "secondary-fixed-dim": "#cac6bd",
+              "tertiary-fixed": "#d7e2ff",
+              "on-secondary": "#ffffff",
+              "on-secondary-fixed": "#1d1c16",
+              "surface-variant": "#e6e2de",
+              error: "#ba1a1a",
+              "on-secondary-container": "#67645d",
+              "surface-bright": "#fdf8f5",
+              "inverse-on-surface": "#f4f0ec",
+              "on-tertiary-container": "#263653",
+              "on-tertiary": "#ffffff",
+              "outline-variant": "#d1c5b6",
+              "on-error": "#ffffff",
+              "on-primary-fixed": "#271900",
+              "on-tertiary-fixed-variant": "#374765",
+              "on-secondary-fixed-variant": "#494740",
+              "on-error-container": "#93000a",
+              "tertiary-fixed-dim": "#b6c7eb",
+              "primary-container": "#b99a66",
+              surface: "#fdf8f5",
+              "on-surface-variant": "#4d463a",
+              "surface-container": "#f1ede9",
+              tertiary: "#4f5e7e",
+              "inverse-primary": "#e4c28a",
+              "error-container": "#ffdad6",
+              "secondary-fixed": "#e7e2d9",
+              secondary: "#615e57",
+              "surface-container-high": "#ece7e4",
+              "surface-container-highest": "#e6e2de",
+              "on-background": "#1c1b1a",
+              "primary-fixed": "#ffdea9",
+              "secondary-container": "#e7e2d9",
+              "tertiary-container": "#8f9fc2",
+              "on-tertiary-fixed": "#091b37",
+              "inverse-surface": "#31302e",
+              "on-primary-container": "#473207",
+            },
+            borderRadius: {
+              DEFAULT: "1rem",
+              lg: "2rem",
+              xl: "3rem",
+              full: "9999px",
+            },
+            spacing: {
+              margin: "3rem",
+              "gutter-mobile": "1rem",
+              "space-xs": "0.25rem",
+              "space-md": "1rem",
+              "margin-mobile": "1.25rem",
+              "space-xl": "2.5rem",
+              "space-sm": "0.5rem",
+              "space-lg": "1.5rem",
+              gutter: "1.5rem",
+            },
+            fontFamily: {
+              "label-sm": ["Plus Jakarta Sans"],
+              "headline-lg-mobile": ["Playfair Display"],
+              "label-md": ["Plus Jakarta Sans"],
+              "headline-sm": ["Playfair Display"],
+              "body-md": ["Plus Jakarta Sans"],
+              "headline-md": ["Playfair Display"],
+              "body-sm": ["Plus Jakarta Sans"],
+              "body-lg": ["Plus Jakarta Sans"],
+              "display-lg": ["Playfair Display"],
+              "display-lg-mobile": ["Playfair Display"],
+              "headline-lg": ["Playfair Display"],
+              "label-lg": ["Plus Jakarta Sans"],
+            },
+            fontSize: {
+              "label-sm": [
+                "11px",
+                {
+                  lineHeight: "14px",
+                  letterSpacing: "0.06em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg-mobile": [
+                "28px",
+                { lineHeight: "36px", fontWeight: "500" },
+              ],
+              "label-md": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.04em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-sm": [
+                "20px",
+                { lineHeight: "28px", fontWeight: "600" },
+              ],
+              "body-md": ["15px", { lineHeight: "24px", fontWeight: "400" }],
+              "headline-md": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "500" },
+              ],
+              "body-sm": ["13px", { lineHeight: "20px", fontWeight: "400" }],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "display-lg": [
+                "56px",
+                {
+                  lineHeight: "64px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "400",
+                },
+              ],
+              "display-lg-mobile": [
+                "38px",
+                {
+                  lineHeight: "46px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "400",
+                },
+              ],
+              "headline-lg": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "500",
+                },
+              ],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"
+  >
+    <header
+      class="fixed top-0 left-0 right-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_8px_30px_-4px_rgba(36,35,33,0.05)]"
+    >
+      <div class="flex items-center justify-between h-16 px-4">
+        <button
+          aria-label="Go back"
+          class="flex items-center justify-center w-11 h-11 rounded-full text-on-surface hover:bg-surface-container active:scale-95 transition-all"
+        >
+          <span class="material-symbols-outlined text-[22px]"
+            >arrow_back_ios_new</span
+          >
+        </button>
+        <div class="flex items-center justify-center flex-1">
+          <span
+            class="font-headline-sm text-headline-sm tracking-[0.18em] text-on-surface font-medium uppercase select-none"
+            >LUMA SALON</span
+          >
+        </div>
+        <button
+          aria-label="User Profile"
+          class="flex items-center justify-center w-11 h-11 rounded-full text-on-surface hover:bg-surface-container active:scale-95 transition-all"
+        >
+          <span class="material-symbols-outlined text-[24px]"
+            >account_circle</span
+          >
+        </button>
+      </div>
+    </header>
+    <main
+      class="flex flex-col relative w-full min-h-screen pt-16 pt-safe pb-safe bg-surface"
+    >
+      <div class="flex flex-col w-full relative">
+        <!-- Main Scrollable Content Area -->
+        <div class="flex flex-col px-5 pt-3 pb-36">
+          <!-- Section 1: Introduction -->
+          <div class="flex items-center gap-1.5 mb-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+            <span
+              class="font-label-sm text-label-sm text-primary uppercase tracking-[0.18em]"
+              >Men's Salon</span
+            >
+          </div>
+          <h1
+            class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight mb-1.5"
+          >
+            Meet your barber.
+          </h1>
+          <p
+            class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6"
+          >
+            Choose your preferred professional for your next visit.
+          </p>
+          <!-- Section 2: Any Available Option -->
+          <div
+            class="barber-option relative w-full rounded-2xl bg-surface-container-lowest p-4 transition-all duration-200 cursor-pointer shadow-[0_4px_20px_-4px_rgba(36,35,33,0.04)] active:scale-[0.99] select-none"
+            onclick="selectBarber('any', 'Any Available Barber', this)"
+          >
+            <!-- Recommended Flexibility Micro Badge -->
+            <div class="flex items-center gap-1.5 mb-3">
+              <span
+                class="inline-flex items-center gap-1 bg-surface-container-high px-2.5 py-1 rounded-full text-on-surface-variant"
+              >
+                <span class="material-symbols-outlined text-[13px] text-primary"
+                  >auto_awesome</span
+                >
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-wider text-[10px]"
+                  >Recommended for flexibility</span
+                >
+              </span>
+            </div>
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3.5 min-w-0">
+                <!-- Icon Capsule -->
+                <div
+                  class="w-12 h-12 rounded-2xl bg-surface-container-low flex items-center justify-center text-primary flex-shrink-0"
+                >
+                  <span class="material-symbols-outlined text-[24px]"
+                    >shuffle</span
+                  >
+                </div>
+                <!-- Text Details -->
+                <div class="flex flex-col min-w-0">
+                  <div class="flex items-baseline gap-1.5">
+                    <span
+                      class="font-headline-sm text-headline-sm text-on-surface"
+                      >No preference?</span
+                    >
+                  </div>
+                  <span class="font-label-md text-label-md text-primary mt-0.5"
+                    >Any available barber</span
+                  >
+                  <p
+                    class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug"
+                  >
+                    Let us find the best available barber for your selected
+                    services.
+                  </p>
+                </div>
+              </div>
+              <!-- Radio State Container -->
+              <div
+                class="radio-indicator flex-shrink-0 w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center transition-colors"
+              >
+                <div
+                  class="radio-inner hidden w-2.5 h-2.5 rounded-full bg-surface-container-lowest"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <!-- Section 3: Barber Profiles Stack -->
+          <div class="flex flex-col mt-7 mb-3">
+            <h2 class="font-headline-sm text-headline-sm text-on-surface">
+              Our professionals
+            </h2>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Choose someone who understands your style.
+            </p>
+          </div>
+          <div class="flex flex-col gap-3.5">
+            <!-- Barber Card 1: Kasun (Selected by default) -->
+            <div
+              class="barber-option relative w-full rounded-2xl bg-surface-container-lowest p-4 transition-all duration-200 cursor-pointer shadow-[0_4px_24px_-4px_rgba(185,154,102,0.18)] active:scale-[0.99] select-none"
+              id="barber-kasun"
+              onclick="selectBarber('kasun', 'Kasun', this)"
+            >
+              <div class="flex items-start justify-between gap-3">
+                <div class="flex items-start gap-3.5 min-w-0">
+                  <!-- Portrait Image -->
+                  <div
+                    class="relative w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0 bg-surface-container"
+                  >
+                    <img
+                      alt="Kasun - Master Barber"
+                      class="w-full h-full object-cover"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh1od6SRR5D0sJXSz0bqV0f91ZzSBNgJ2d-Dw_3myk570HH4GVJzXToeS-hkr32ERsUc8yRAjUjoWhTBCWpfAZVHfBPd507ZsLdUARuq2RSoNFdoMbFEgLOObpW_Hd_UD_dZAby6Z2o4NAj9Hxm0Ocrp7MSJl8wLRbQYerpA5hSqK-XoG3UF99yWXIfdOLzlCCXlzFrHywsu6IZnoFYDhOEHmWD7-NwQFYODGrl-s"
+                    />
+                  </div>
+                  <!-- Profile Info -->
+                  <div class="flex flex-col min-w-0 pr-1">
+                    <span
+                      class="font-headline-sm text-headline-sm text-on-surface"
+                      >Kasun</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm text-primary uppercase tracking-wider mt-0.5"
+                    >
+                      Fades &amp; modern cuts
+                    </span>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-snug"
+                    >
+                      Specializes in seamless taper fades, scissor work &amp;
+                      precision beard lineups.
+                    </p>
+                  </div>
+                </div>
+                <!-- Selection Indicator (Selected) -->
+                <div
+                  class="radio-indicator flex-shrink-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center transition-colors"
+                >
+                  <span
+                    class="material-symbols-outlined text-[16px] text-on-primary font-bold"
+                    >check</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Barber Card 2: Rizwan (Unselected) -->
+            <div
+              class="barber-option relative w-full rounded-2xl bg-surface-container-lowest p-4 transition-all duration-200 cursor-pointer shadow-[0_4px_20px_-4px_rgba(36,35,33,0.03)] active:scale-[0.99] select-none"
+              id="barber-rizwan"
+              onclick="selectBarber('rizwan', 'Rizwan', this)"
+            >
+              <div class="flex items-start justify-between gap-3">
+                <div class="flex items-start gap-3.5 min-w-0">
+                  <!-- Portrait Image -->
+                  <div
+                    class="relative w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0 bg-surface-container"
+                  >
+                    <img
+                      alt="Rizwan - Master Barber"
+                      class="w-full h-full object-cover"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_ATwkbmjngxEgv8Fi2ToOWeAdDRKKcKzpWz6bMtqVBxqRug4Ha_gF6hral5o4QVSM_2mjBEBUkHXV-uAcqMujlp4vXS4C8pavwSHLc19vJqT_B-e5zBgig8rduC87Rl0Gc9RH7RPuwkTwzKl8PVGXbt8STtSijr4r2PpqHFwNE567I-SQHtYZfq6pLJVRjOzroivptgMJ2qlK1aMIVQonz0VyeTHIx177Q0K8lg4"
+                    />
+                  </div>
+                  <!-- Profile Info -->
+                  <div class="flex flex-col min-w-0 pr-1">
+                    <span
+                      class="font-headline-sm text-headline-sm text-on-surface"
+                      >Rizwan</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mt-0.5"
+                    >
+                      Classic cuts &amp; beard grooming
+                    </span>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-snug"
+                    >
+                      Master barber with 10+ years crafting tailored gentleman's
+                      cuts and luxury hot-towel beard care.
+                    </p>
+                  </div>
+                </div>
+                <!-- Selection Indicator (Unselected) -->
+                <div
+                  class="radio-indicator flex-shrink-0 w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center transition-colors"
+                >
+                  <div
+                    class="radio-inner hidden w-2.5 h-2.5 rounded-full bg-surface-container-lowest"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <!-- Barber Card 3: Dilan (Unselected) -->
+            <div
+              class="barber-option relative w-full rounded-2xl bg-surface-container-lowest p-4 transition-all duration-200 cursor-pointer shadow-[0_4px_20px_-4px_rgba(36,35,33,0.03)] active:scale-[0.99] select-none"
+              id="barber-dilan"
+              onclick="selectBarber('dilan', 'Dilan', this)"
+            >
+              <div class="flex items-start justify-between gap-3">
+                <div class="flex items-start gap-3.5 min-w-0">
+                  <!-- Portrait Image -->
+                  <div
+                    class="relative w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0 bg-surface-container"
+                  >
+                    <img
+                      alt="Dilan - Creative Barber &amp; Stylist"
+                      class="w-full h-full object-cover"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2-rUBUTQvUdF_DQ7l83zfiSDE9ZedPUNmDdTwqSgTHxEtWzpWO6E8UFlQc84Z3nMAYkr_GGNRiwKNUwHXVsuRuS_rso9vvKwb2cixFZmbw-yuFn1fMcbiMGGH3LpgDAIJgEkjf55A5CLeRDHgf7N1o32m9b-l__4jybv2Dl_SM1lrrwjbQ1qyfuYdGKH-AegV7KvGW4PyVfqGPyaRTn0__OBEzgXoO0YKEC1OaZE"
+                    />
+                  </div>
+                  <!-- Profile Info -->
+                  <div class="flex flex-col min-w-0 pr-1">
+                    <span
+                      class="font-headline-sm text-headline-sm text-on-surface"
+                      >Dilan</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mt-0.5"
+                    >
+                      Styling &amp; hair colouring
+                    </span>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-snug"
+                    >
+                      Creative artist dedicated to modern texture, color
+                      transformations and natural styling.
+                    </p>
+                  </div>
+                </div>
+                <!-- Selection Indicator (Unselected) -->
+                <div
+                  class="radio-indicator flex-shrink-0 w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center transition-colors"
+                >
+                  <div
+                    class="radio-inner hidden w-2.5 h-2.5 rounded-full bg-surface-container-lowest"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Sticky Bottom Summary & Booking Drawer Bar -->
+        <aside
+          class="fixed bottom-0 left-0 right-0 w-full z-40 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-8px_30px_-4px_rgba(36,35,33,0.06)]"
+        >
+          <div class="flex items-center justify-between px-5 py-3.5">
+            <!-- Left: Service and Selected Barber Metadata -->
+            <div class="flex flex-col min-w-0 pr-2">
+              <span
+                class="font-label-sm text-label-sm tracking-[0.14em] uppercase text-on-surface-variant truncate"
+                id="booking-eyebrow"
+              >
+                1 SERVICE SELECTED • KASUN
+              </span>
+              <div class="flex items-baseline gap-1.5 mt-0.5">
+                <span
+                  class="font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight"
+                >
+                  LKR 1,500
+                </span>
+                <span class="font-body-sm text-body-sm text-on-surface-variant"
+                  >· 30m</span
+                >
+              </div>
+              <span class="font-label-sm text-label-sm text-outline mt-0.5">
+                Next: Select date &amp; time
+              </span>
+            </div>
+            <!-- Right: Action CTA -->
+            <button
+              aria-label="Continue to date and time selection"
+              class="h-12 px-6 rounded-full bg-primary-container text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-sm hover:opacity-95 active:scale-95 transition-all flex-shrink-0"
+              onclick="window.location.href='chooseDate.html'"
+              type="button"
+            >
+              <span>Continue</span>
+              <span class="material-symbols-outlined text-[18px]"
+                >arrow_forward</span
+              >
+            </button>
+          </div>
+        </aside>
+      </div>
+      <script>
+        function selectBarber(barberId, barberName, cardElement) {
+          const allCards = document.querySelectorAll(".barber-option");
+          allCards.forEach((card) => {
+            // Remove selected styling
+            card.classList.remove(
+              "shadow-[0_4px_24px_-4px_rgba(185,154,102,0.18)]",
+            );
+            card.classList.add("shadow-[0_4px_20px_-4px_rgba(36,35,33,0.03)]");
+
+            const indicator = card.querySelector(".radio-indicator");
+            if (indicator) {
+              indicator.className =
+                "radio-indicator flex-shrink-0 w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center transition-colors";
+              indicator.innerHTML =
+                '<div class="radio-inner hidden w-2.5 h-2.5 rounded-full bg-surface-container-lowest"></div>';
+            }
+          });
+
+          // Apply selected state to chosen card
+          cardElement.classList.remove(
+            "shadow-[0_4px_20px_-4px_rgba(36,35,33,0.03)]",
+          );
+          cardElement.classList.add(
+            "shadow-[0_4px_24px_-4px_rgba(185,154,102,0.18)]",
+          );
+
+          const activeIndicator = cardElement.querySelector(".radio-indicator");
+          if (activeIndicator) {
+            activeIndicator.className =
+              "radio-indicator flex-shrink-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center transition-colors";
+            activeIndicator.innerHTML =
+              '<span class="material-symbols-outlined text-[16px] text-on-primary font-bold">check</span>';
+          }
+
+          // Update bottom drawer eyebrow
+          const eyebrow = document.getElementById("booking-eyebrow");
+          if (eyebrow) {
+            const displayName =
+              barberId === "any" ? "ANY BARBER" : barberName.toUpperCase();
+            eyebrow.textContent = `1 SERVICE SELECTED • ${displayName}`;
+          }
+        }
+      </script>
+    </main>
+  </body>
+</html>

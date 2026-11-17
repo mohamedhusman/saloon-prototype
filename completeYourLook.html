@@ -1,0 +1,674 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+      name="viewport"
+    />
+    <meta content="mobile_stack" name="shell-type" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        .pb-safe {
+          padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+        .pt-safe {
+          padding-top: env(safe-area-inset-top, 0px);
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              outline: "#7f7669",
+              primary: "#745a2c",
+              "surface-container-low": "#f7f3ef",
+              "primary-fixed-dim": "#e4c28a",
+              "surface-tint": "#745a2c",
+              "on-primary-fixed-variant": "#5a4317",
+              background: "#fdf8f5",
+              "surface-dim": "#ddd9d6",
+              "on-surface": "#1c1b1a",
+              "surface-container-lowest": "#ffffff",
+              "on-primary": "#ffffff",
+              "secondary-fixed-dim": "#cac6bd",
+              "tertiary-fixed": "#d7e2ff",
+              "on-secondary": "#ffffff",
+              "on-secondary-fixed": "#1d1c16",
+              "surface-variant": "#e6e2de",
+              error: "#ba1a1a",
+              "on-secondary-container": "#67645d",
+              "surface-bright": "#fdf8f5",
+              "inverse-on-surface": "#f4f0ec",
+              "on-tertiary-container": "#263653",
+              "on-tertiary": "#ffffff",
+              "outline-variant": "#d1c5b6",
+              "on-error": "#ffffff",
+              "on-primary-fixed": "#271900",
+              "on-tertiary-fixed-variant": "#374765",
+              "on-secondary-fixed-variant": "#494740",
+              "on-error-container": "#93000a",
+              "tertiary-fixed-dim": "#b6c7eb",
+              "primary-container": "#b99a66",
+              surface: "#fdf8f5",
+              "on-surface-variant": "#4d463a",
+              "surface-container": "#f1ede9",
+              tertiary: "#4f5e7e",
+              "inverse-primary": "#e4c28a",
+              "error-container": "#ffdad6",
+              "secondary-fixed": "#e7e2d9",
+              secondary: "#615e57",
+              "surface-container-high": "#ece7e4",
+              "surface-container-highest": "#e6e2de",
+              "on-background": "#1c1b1a",
+              "primary-fixed": "#ffdea9",
+              "secondary-container": "#e7e2d9",
+              "tertiary-container": "#8f9fc2",
+              "on-tertiary-fixed": "#091b37",
+              "inverse-surface": "#31302e",
+              "on-primary-container": "#473207",
+            },
+            borderRadius: {
+              DEFAULT: "1rem",
+              lg: "2rem",
+              xl: "3rem",
+              full: "9999px",
+            },
+            spacing: {
+              margin: "3rem",
+              "gutter-mobile": "1rem",
+              "space-xs": "0.25rem",
+              "space-md": "1rem",
+              "margin-mobile": "1.25rem",
+              "space-xl": "2.5rem",
+              "space-sm": "0.5rem",
+              "space-lg": "1.5rem",
+              gutter: "1.5rem",
+            },
+            fontFamily: {
+              "label-sm": ["Plus Jakarta Sans"],
+              "headline-lg-mobile": ["Playfair Display"],
+              "label-md": ["Plus Jakarta Sans"],
+              "headline-sm": ["Playfair Display"],
+              "body-md": ["Plus Jakarta Sans"],
+              "headline-md": ["Playfair Display"],
+              "body-sm": ["Plus Jakarta Sans"],
+              "body-lg": ["Plus Jakarta Sans"],
+              "display-lg": ["Playfair Display"],
+              "display-lg-mobile": ["Playfair Display"],
+              "headline-lg": ["Playfair Display"],
+              "label-lg": ["Plus Jakarta Sans"],
+            },
+            fontSize: {
+              "label-sm": [
+                "11px",
+                {
+                  lineHeight: "14px",
+                  letterSpacing: "0.06em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg-mobile": [
+                "28px",
+                { lineHeight: "36px", fontWeight: "500" },
+              ],
+              "label-md": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.04em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-sm": [
+                "20px",
+                { lineHeight: "28px", fontWeight: "600" },
+              ],
+              "body-md": ["15px", { lineHeight: "24px", fontWeight: "400" }],
+              "headline-md": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "500" },
+              ],
+              "body-sm": ["13px", { lineHeight: "20px", fontWeight: "400" }],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "display-lg": [
+                "56px",
+                {
+                  lineHeight: "64px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "400",
+                },
+              ],
+              "display-lg-mobile": [
+                "38px",
+                {
+                  lineHeight: "46px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "400",
+                },
+              ],
+              "headline-lg": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "500",
+                },
+              ],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"
+  >
+    <header
+      class="fixed top-0 left-0 right-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_8px_30px_-4px_rgba(36,35,33,0.05)]"
+    >
+      <div class="flex items-center justify-between h-16 px-4">
+        <button
+          aria-label="Go back"
+          class="flex items-center justify-center w-11 h-11 rounded-full text-on-surface hover:bg-surface-container active:scale-95 transition-all"
+        >
+          <span class="material-symbols-outlined text-[22px]"
+            >arrow_back_ios_new</span
+          >
+        </button>
+        <div class="flex items-center justify-center flex-1">
+          <span
+            class="font-headline-sm text-headline-sm tracking-[0.18em] text-on-surface font-medium uppercase select-none"
+            >LUMA SALON</span
+          >
+        </div>
+        <button
+          aria-label="User Profile"
+          class="flex items-center justify-center w-11 h-11 rounded-full text-on-surface hover:bg-surface-container active:scale-95 transition-all"
+        >
+          <span class="material-symbols-outlined text-[24px]"
+            >account_circle</span
+          >
+        </button>
+      </div>
+    </header>
+    <main
+      class="flex flex-col relative w-full min-h-screen pt-16 pt-safe pb-safe bg-surface"
+    >
+      <div class="flex flex-col w-full relative">
+        <!-- Interactive State Container -->
+        <div class="flex flex-col w-full px-5 pt-3 pb-36 space-y-6">
+          <!-- Header Introduction -->
+          <header class="flex flex-col space-y-2">
+            <div class="inline-flex items-center space-x-2">
+              <span
+                class="w-2 h-2 rounded-full bg-primary-container inline-block"
+              ></span>
+              <span
+                class="font-label-sm text-label-sm uppercase tracking-[0.16em] text-on-surface-variant font-semibold"
+                >YOUR APPOINTMENT</span
+              >
+            </div>
+            <h1
+              class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight"
+            >
+              Complete your look.
+            </h1>
+            <p
+              class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+            >
+              Your haircut is selected. Would you like to add something extra to
+              make your visit even better?
+            </p>
+          </header>
+          <!-- Selected Service Summary Card (Locked) -->
+          <section
+            aria-labelledby="primary-service-heading"
+            class="flex flex-col"
+          >
+            <div
+              class="bg-surface-container-lowest rounded-2xl p-3.5 shadow-[0_8px_30px_-4px_rgba(36,35,33,0.05)] flex items-center justify-between"
+            >
+              <div class="flex items-center space-x-3.5 min-w-0">
+                <div
+                  class="w-16 h-16 rounded-xl overflow-hidden bg-surface-container flex-shrink-0"
+                >
+                  <img
+                    alt="Classic Haircut"
+                    class="w-full h-full object-cover"
+                    data-alt="Editorial portrait of an impeccably groomed gentleman seated in an antique leather barber chair at LUMA salon, warm natural light, soft textured brick wall and brass mirrors in background, luxury tones of champagne, linen and espresso"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3Nf9Ex97CF8eoorL2jcBLfe2ch2Y5m5LfMSGFaicja-F1W560_K-sA9BdsrBeNEBnl2dnzBr5Ih1cMvmX14HR3FrCzVmNF9H7Wia_xVsldJGcyIofE9xw-xKP1VNMFo9JsBxTdg4QiYRISzE0deVtmVmYmVGMbdZv4tMLe-ic_eGxfVIw2aH_r2N3_vLNIMNbQuQHO5IUEIMR1VDHA_rKBnFeUqVNdZAeqYL4HAw"
+                  />
+                </div>
+                <div class="flex flex-col min-w-0 pr-2">
+                  <span
+                    class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold"
+                    >Selected Service</span
+                  >
+                  <h2
+                    class="font-headline-sm text-headline-sm text-on-surface truncate"
+                    id="primary-service-heading"
+                  >
+                    Classic Haircut
+                  </h2>
+                  <div
+                    class="flex items-center space-x-1.5 text-on-surface-variant pt-0.5"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[15px] text-primary"
+                      >schedule</span
+                    >
+                    <span class="font-label-md text-label-md">30 mins</span>
+                    <span class="text-outline-variant font-bold">•</span>
+                    <span
+                      class="font-label-md text-label-md text-on-surface font-semibold"
+                      >LKR 1,500</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Non-clickable Locked Indicator -->
+              <div class="flex-shrink-0 mr-1">
+                <div
+                  class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-sm"
+                  title="Core service selected"
+                >
+                  <span
+                    class="material-symbols-outlined text-[19px]"
+                    style="font-variation-settings: &quot;FILL&quot; 1"
+                    >check</span
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Recommended Additional Services Section -->
+          <section class="flex flex-col space-y-3 pt-2">
+            <div class="flex flex-col">
+              <h2 class="font-headline-sm text-headline-sm text-on-surface">
+                You might also like
+              </h2>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                A few finishing touches to complete your look. (Optional)
+              </p>
+            </div>
+            <!-- Add-on List Cards -->
+            <div class="flex flex-col space-y-3">
+              <!-- Add-on Card 1: Beard Trim -->
+              <div
+                class="addon-card group relative bg-surface-container-lowest rounded-2xl p-3.5 shadow-[0_8px_30px_-4px_rgba(36,35,33,0.04)] transition-all duration-300 cursor-pointer flex items-center justify-between active:scale-[0.99] select-none"
+                data-duration="15"
+                data-price="700"
+                data-service-id="beard-trim"
+                onclick="toggleAddon('beard-trim', 700, 15)"
+              >
+                <div class="flex items-center space-x-3.5 min-w-0">
+                  <div
+                    class="w-20 h-20 rounded-2xl overflow-hidden bg-surface-container flex-shrink-0 relative"
+                  >
+                    <img
+                      alt="Beard Trim"
+                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      data-alt="Close up artisanal barbershop detailing of master barber precisely styling and trimming a neat beard using scissors and amber comb, warm ambient lighting, natural walnut accents, refined upscale gentlemen sanctuary aesthetic"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe9SYchN-h4I88w2soKDF0SMk4mO9FHVpjz9FfcHt6EkU2jAqN5syWgoP8jNKPmNkLyDwmcGGKWBiKYCKzLt6-iOlwDSjWwMfAmbBdmAFKvxdj-pWyyN81_Lq1mTU8v9mFJBIEn3bsBaBIjyQyWQIBmBwRVOkAvYtiAGUULGljErvaZJwZkpVNwZyAYB2shlI7hcd3pIvAbsIeTPZUuFV1uR7lioM1qSL09jzP8h8"
+                    />
+                  </div>
+                  <div class="flex flex-col min-w-0 pr-2 space-y-0.5">
+                    <div class="flex items-center">
+                      <span
+                        class="inline-flex items-center px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-[10px] tracking-wider uppercase font-semibold"
+                      >
+                        RECOMMENDED
+                      </span>
+                    </div>
+                    <h3
+                      class="font-headline-sm text-headline-sm text-on-surface truncate"
+                    >
+                      Beard Trim
+                    </h3>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 leading-snug"
+                    >
+                      Keep your beard looking sharp and well-groomed.
+                    </p>
+                    <div
+                      class="flex items-center space-x-1.5 text-on-surface-variant pt-0.5"
+                    >
+                      <span
+                        class="material-symbols-outlined text-[14px] text-primary"
+                        >schedule</span
+                      >
+                      <span class="font-label-md text-label-md">15 mins</span>
+                      <span class="text-outline-variant font-bold">•</span>
+                      <span
+                        class="font-label-md text-label-md text-on-surface font-semibold"
+                        >LKR 700</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <button
+                  aria-label="Add Beard Trim service"
+                  class="toggle-btn w-10 h-10 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors duration-200 flex items-center justify-center flex-shrink-0 shadow-sm ml-2"
+                  type="button"
+                >
+                  <span
+                    class="material-symbols-outlined icon text-[22px] transition-transform duration-200"
+                    >add</span
+                  >
+                </button>
+              </div>
+              <!-- Add-on Card 2: Hair Wash & Styling -->
+              <div
+                class="addon-card group relative bg-surface-container-lowest rounded-2xl p-3.5 shadow-[0_8px_30px_-4px_rgba(36,35,33,0.04)] transition-all duration-300 cursor-pointer flex items-center justify-between active:scale-[0.99] select-none"
+                data-duration="25"
+                data-price="1000"
+                data-service-id="hair-wash"
+                onclick="toggleAddon('hair-wash', 1000, 25)"
+              >
+                <div class="flex items-center space-x-3.5 min-w-0">
+                  <div
+                    class="w-20 h-20 rounded-2xl overflow-hidden bg-surface-container flex-shrink-0 relative"
+                  >
+                    <img
+                      alt="Hair Wash &amp; Styling"
+                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      data-alt="Client reclining in deep relaxation at a sleek black ceramic shampoo station in a luxury salon, warm ambient candlelight, rich dark stone tiles and botanical aromatherapy bottles, calming spa atmosphere"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsHVg5yVG0ciTRDXclroJv2H49UFcg7Xudsmpn7fDL0EBRsVlzmZLw-8Zo6V8BpZ-hm764e47H-llHB0LGON2r6Z3TGG7pEiN3BASy6oOhN7sRRINI8K-gHiajvpGI9geMbHaWNOrPWghyewq45HCipRZ5y-pXpY71_Q_qyTHSy_F7kJNi8ztwAZ9aHSjkAoQQlJt2gmQJlEG1JcTPjvwT_0eUKLWsZizUluHuzTE"
+                    />
+                  </div>
+                  <div class="flex flex-col min-w-0 pr-2 space-y-0.5">
+                    <h3
+                      class="font-headline-sm text-headline-sm text-on-surface truncate"
+                    >
+                      Hair Wash &amp; Styling
+                    </h3>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 leading-snug"
+                    >
+                      Relax with a refreshing wash and professional styling.
+                    </p>
+                    <div
+                      class="flex items-center space-x-1.5 text-on-surface-variant pt-0.5"
+                    >
+                      <span
+                        class="material-symbols-outlined text-[14px] text-primary"
+                        >schedule</span
+                      >
+                      <span class="font-label-md text-label-md">25 mins</span>
+                      <span class="text-outline-variant font-bold">•</span>
+                      <span
+                        class="font-label-md text-label-md text-on-surface font-semibold"
+                        >LKR 1,000</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <button
+                  aria-label="Add Hair Wash and Styling"
+                  class="toggle-btn w-10 h-10 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors duration-200 flex items-center justify-center flex-shrink-0 shadow-sm ml-2"
+                  type="button"
+                >
+                  <span
+                    class="material-symbols-outlined icon text-[22px] transition-transform duration-200"
+                    >add</span
+                  >
+                </button>
+              </div>
+              <!-- Add-on Card 3: Hair Colouring -->
+              <div
+                class="addon-card group relative bg-surface-container-lowest rounded-2xl p-3.5 shadow-[0_8px_30px_-4px_rgba(36,35,33,0.04)] transition-all duration-300 cursor-pointer flex items-center justify-between active:scale-[0.99] select-none"
+                data-duration="60"
+                data-price="3500"
+                data-service-id="hair-colouring"
+                onclick="toggleAddon('hair-colouring', 3500, 60)"
+              >
+                <div class="flex items-center space-x-3.5 min-w-0">
+                  <div
+                    class="w-20 h-20 rounded-2xl overflow-hidden bg-surface-container flex-shrink-0 relative"
+                  >
+                    <img
+                      alt="Hair Colouring"
+                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      data-alt="Editorial salon styling suite with a gentleman receiving bespoke hairline toner treatment by an expert hair colourist, bright daylight through floor-to-ceiling windows, elegant arch mirrors, travertine countertops"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgQi2lNonseH7vmvOJZ8_j2jdFkVfK01BUw9ApLvRP_HMR_uZ-w486-03jDTYfc_MnjFYzHOLjHFLPPD3eyGWL-IU7Vn83zgmwGbRHOLjpnM9b8Cn-KXh1c4Bq41N2Eg07XXfz6-E0ookG0EOihxUGvx7XjMYc1Z11iCIQ43q_g3is7veIqBavAHzW9bvtI6iM3AxqcvGiXTHTzT1KRpY7rXoW3mTYAnmkGTApRo4"
+                    />
+                  </div>
+                  <div class="flex flex-col min-w-0 pr-2 space-y-0.5">
+                    <h3
+                      class="font-headline-sm text-headline-sm text-on-surface truncate"
+                    >
+                      Hair Colouring
+                    </h3>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 leading-snug"
+                    >
+                      Refresh your style with professional hair colour.
+                    </p>
+                    <div
+                      class="flex items-center space-x-1.5 text-on-surface-variant pt-0.5"
+                    >
+                      <span
+                        class="material-symbols-outlined text-[14px] text-primary"
+                        >schedule</span
+                      >
+                      <span class="font-label-md text-label-md">60 mins</span>
+                      <span class="text-outline-variant font-bold">•</span>
+                      <span
+                        class="font-label-md text-label-md text-on-surface font-semibold"
+                        >LKR 3,500</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <button
+                  aria-label="Add Hair Colouring service"
+                  class="toggle-btn w-10 h-10 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors duration-200 flex items-center justify-center flex-shrink-0 shadow-sm ml-2"
+                  type="button"
+                >
+                  <span
+                    class="material-symbols-outlined icon text-[22px] transition-transform duration-200"
+                    >add</span
+                  >
+                </button>
+              </div>
+            </div>
+          </section>
+          <!-- Hospitality Touch Note -->
+          <div
+            class="rounded-2xl bg-surface-container-low p-4 flex items-start space-x-3 text-on-surface-variant"
+          >
+            <span
+              class="material-symbols-outlined text-primary-container text-[22px] mt-0.5"
+              >local_cafe</span
+            >
+            <div class="flex flex-col">
+              <span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold"
+                >Complimentary Barista Service</span
+              >
+              <p
+                class="font-body-sm text-body-sm text-on-surface-variant mt-0.5"
+              >
+                Every visit includes your choice of single-origin pour-over
+                coffee or herbal infusion.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Sticky Bottom Booking Bar -->
+        <nav
+          aria-label="Appointment Confirmation"
+          class="fixed bottom-0 left-0 right-0 w-full z-40 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-8px_30px_rgba(36,35,33,0.08)]"
+        >
+          <div
+            class="max-w-md mx-auto px-5 py-3.5 flex items-center justify-between"
+          >
+            <!-- Left: Dynamic Summary -->
+            <div class="flex flex-col min-w-0 mr-3">
+              <span
+                class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold"
+                id="summary-count"
+              >
+                1 Service Selected
+              </span>
+              <div class="flex items-baseline space-x-1.5">
+                <span
+                  class="font-headline-sm text-headline-sm text-on-surface font-semibold"
+                  id="summary-total"
+                  >LKR 1,500</span
+                >
+                <span
+                  class="font-body-sm text-body-sm text-on-surface-variant"
+                  id="summary-duration"
+                  >30m</span
+                >
+              </div>
+              <span
+                class="font-label-sm text-[10px] text-outline tracking-normal"
+                >Extras are optional</span
+              >
+            </div>
+            <!-- Right: Primary CTA Action -->
+            <button
+              class="h-12 px-6 rounded-full bg-primary-container text-on-primary font-label-lg text-label-lg tracking-wide hover:bg-primary active:scale-95 transition-all shadow-[0_4px_16px_rgba(185,154,102,0.35)] flex items-center space-x-1.5 flex-shrink-0 cursor-pointer"
+              onclick="confirmSelection(event)"
+              type="button"
+            >
+              <span>Continue</span>
+              <span class="material-symbols-outlined text-[18px]"
+                >arrow_forward</span
+              >
+            </button>
+          </div>
+        </nav>
+      </div>
+      <script>
+        // Dynamic Add-on State Engine
+        const baseService = { price: 1500, duration: 30 };
+        const selectedAddons = new Map();
+
+        function toggleAddon(id, price, duration) {
+          const card = document.querySelector(`[data-service-id="${id}"]`);
+          const btn = card.querySelector(".toggle-btn");
+          const icon = btn.querySelector(".icon");
+
+          if (selectedAddons.has(id)) {
+            // Remove add-on
+            selectedAddons.delete(id);
+            card.classList.remove("bg-secondary-container/40", "shadow-md");
+            card.classList.add("bg-surface-container-lowest");
+            btn.classList.remove("bg-primary-container", "text-on-primary");
+            btn.classList.add("bg-surface-container", "text-on-surface");
+            icon.textContent = "add";
+            icon.style.fontVariationSettings = "'FILL' 0";
+          } else {
+            // Add add-on
+            selectedAddons.set(id, { price, duration });
+            card.classList.remove("bg-surface-container-lowest");
+            card.classList.add("bg-secondary-container/40", "shadow-md");
+            btn.classList.remove("bg-surface-container", "text-on-surface");
+            btn.classList.add("bg-primary-container", "text-on-primary");
+            icon.textContent = "check";
+            icon.style.fontVariationSettings = "'FILL' 1";
+          }
+
+          updateSummary();
+        }
+
+        function updateSummary() {
+          let totalPrice = baseService.price;
+          let totalDuration = baseService.duration;
+          const count = 1 + selectedAddons.size;
+
+          selectedAddons.forEach((item) => {
+            totalPrice += item.price;
+            totalDuration += item.duration;
+          });
+
+          const countLabel =
+            count === 1 ? "1 Service Selected" : `${count} Services Selected`;
+          document.getElementById("summary-count").textContent = countLabel;
+          document.getElementById("summary-total").textContent =
+            `LKR ${totalPrice.toLocaleString()}`;
+
+          // Duration formatting
+          const hours = Math.floor(totalDuration / 60);
+          const mins = totalDuration % 60;
+          let durationStr = "";
+          if (hours > 0) {
+            durationStr = mins > 0 ? `${hours}h ${mins}m` : `${hours}h`;
+          } else {
+            durationStr = `${mins}m`;
+          }
+          document.getElementById("summary-duration").textContent =
+            `• ${durationStr}`;
+        }
+
+        function confirmSelection(clickEvent) {
+          // Subtle tactile feedback effect
+          const btn = clickEvent.currentTarget;
+          btn.classList.add("scale-95");
+          setTimeout(() => {
+            btn.classList.remove("scale-95");
+            window.location.href = "chooseYourBarber.html";
+          }, 150);
+        }
+      </script>
+    </main>
+  </body>
+</html>
